@@ -1,0 +1,10 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "fluidania:mana_diffuser"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}

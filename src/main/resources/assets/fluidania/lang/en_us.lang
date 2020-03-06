@@ -1,0 +1,5 @@
+tile.fluidania:mana_diffuser.name=Mana Diffuser
+tile.fluidania:mana_infuser.name=Mana Infuser
+fluid.fluidania:liquid_mana=Liquid Mana
+tile.fluidania:liquid_mana.name=Liquid Mana
+itemGroup.fluidania=Fluidania

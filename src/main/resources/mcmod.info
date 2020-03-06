@@ -1,0 +1,16 @@
+[
+{
+  "modid": "fluidania",
+  "name": "Fluidania",
+  "description": "Makes transporting botania's mana easy.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["cabralRodrigo"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "result": {
+    "item": "fluidania:mana_infuser"
+  },
+  "pattern": [
+    "mmm",
+    "ete",
+    "lbl"
+  ],
+  "key": {
+    "m": {
+      "item": "botania:manaresource",
+      "data": 0
+    },
+    "e": {
+      "item": "botania:manaresource",
+      "data": 7
+    },
+    "t": {
+      "item": "botania:manaresource",
+      "data": 4
+    },
+    "l": {
+      "item": "botania:livingrock",
+      "data": 0
+    },
+    "b": {
+      "item": "minecraft:bucket",
+      "data": 0
+    }
+  }
+}

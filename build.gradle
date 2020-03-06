@@ -1,0 +1,65 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven { url = "https://files.minecraftforge.net/maven" }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    }
+}
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+ext.configFile = file('build.properties')
+ext.config = parseConfig(configFile)
+
+version = config.version
+group = "br.com.cabralrodrigo.mc.fluidania"
+archivesBaseName = "fluidania"
+
+sourceCompatibility = targetCompatibility = '1.8'
+compileJava {
+    sourceCompatibility = targetCompatibility = '1.8'
+}
+
+minecraft {
+    version = "${config.mc_version}-${config.forge_version}"
+    runDir = "run"
+    mappings = "snapshot_20171003"
+
+    replace '{version}', config.version
+}
+
+jar {
+    archiveName = "fluidania-${config.mc_version}-${version}.${extension}"
+}
+
+
+dependencies {
+    compile files("libs/Botania r1.10-358.jar")
+}
+
+processResources {
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+        
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}
+
+def parseConfig(File config) {
+    if(config.exists()){
+        config.withReader {
+            def prop = new Properties()
+            prop.load(it)
+            return (new ConfigSlurper().parse(prop))
+        }
+    } else {
+        return null
+    }
+}
